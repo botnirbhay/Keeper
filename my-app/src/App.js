@@ -1,13 +1,13 @@
 import './App.css';
 import Footer from './Footer';
 import Header from './Header';
-import Note from './Note';
-import card from "./card"
+import Notes from './Note';
+import Card from "./Card"
 function createEntry(item)
 {
   return <Card
     key={item.id}
-    name={item.name}
+    title={item.title}
     content={item.content}
   />
 }
@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Note/>
+      {Notes.map(createEntry)}
       <Footer/>
     </div>
   );
